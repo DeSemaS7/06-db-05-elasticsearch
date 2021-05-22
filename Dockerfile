@@ -19,7 +19,6 @@ RUN yum install --enablerepo=elasticsearch -y elasticsearch \
 RUN sed -i 's/#network.host: 192.168.0.1/network.host: 127.0.0.1/g' /etc/elasticsearch/elasticsearch.yml; 
 RUN sed -i 's/#node.name: node-1/node.name: netology_test/g' /etc/elasticsearch/elasticsearch.yml;
 RUN sed -i '/network.host: 127.0.0.1/a http.host: 0.0.0.0' etc/elasticsearch/elasticsearch.yml;
-#RUN sed -i 's/path.data: /var/lib/elasticsearch//path.data: /var/lib/g' /etc/elasticsearch/elasticsearch.yml;
 
 USER elasticsearch
 EXPOSE 9200
